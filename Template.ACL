@@ -1,0 +1,107 @@
+@ACL900
+^FOLDER   Scripts                             1310506756
+[PARENT_FOLDER_ID] 0
+^LOGFILE  Template                            "" "Template.LOG"
+[PARENT_FOLDER_ID] 0
+^BATCH    ScriptA                            
+[PARENT_FOLDER_ID] 1310506756
+COMMENT 
+*******************************************************************************
+**   Script Name:  ScriptA (2 of 3)
+**   Description:  Description of subscript
+*******************************************************************************
+
+
+^BATCH    ScriptB                            
+[PARENT_FOLDER_ID] 1310506756
+COMMENT 
+*******************************************************************************
+**   Script Name:  ScriptB (3 of 3)
+**   Description:  Description of subscript
+*******************************************************************************
+^BATCH    _Main                              
+[PARENT_FOLDER_ID] 1310506756
+COMMENT 
+**   DISCLAIMER NOTICE:
+**   ACL SERVICES LTD. ("ACL") AND ITS DISTRIBUTORS PROVIDE THE SCRIPT "AS IS" AND 
+**   FREE OF CHARGE. ACL AND ITS DISTRIBUTORS: (A) DO NOT PROVIDE SUPPORT FOR THESE 
+**   SCRIPTS; (B) MAKE NO WARRANTIES OR REPRESENTATIONS, EXPRESSED OR IMPLIED, WITH 
+**   RESPECT TO THE SCRIPT, INCLUDING ITS FITNESS FOR A PARTICULAR PURPOSE, 
+**   MERCHANTABILITY, DURABILITY, QUALITY OR ITS NON-INFRINGEMENT; (C) DO NOT WARRANT 
+**   THAT THE SCRIPT IS FREE FROM ERRORS; AND (D) WILL NOT BE LIABLE FOR ANY DAMAGES 
+**   (INCLUDING, BUT NOT LIMITED TO INDIRECT DAMAGES SUCH AS LOST PROFITS AND LOST 
+**   DATA) ARISING OUT OF THE USE OF, OR THE INABILITY TO USE THE SCRIPT. YOU AGREE TO 
+**   ASSUME ALL RISK OF LOSS OR DAMAGE ARISING FROM THE USE OF THE SCRIPT.
+END
+
+
+COMMENT 
+*******************************************************************************
+**   Script Name:  _Main (1 of x)
+**   Description:  This will describe what the script does.
+**   
+**   Requirements: 1. Requirement 1. 
+**                 2. Requirement 2.
+**                 ....   
+**                             
+**   Output:       ACL Table
+**
+*******************************************************************************
+END
+
+
+COM********************************************************************************
+COM  This is how comments should look. Script should always begin with below.
+COM********************************************************************************
+
+
+   SET SAFETY OFF
+   DELETE ALL OK
+   CLOSE PRI
+   CLOSE SEC
+
+
+COM********************************************************************************
+COM  NAMING CONVENTIONS
+COM********************************************************************************
+COM  Comupted fields > C_XXXXX
+COM  Temporary tables > T_XXXXX
+COM  Source tables > S_XXXX
+COM  Prep tables > P_XXXX
+COM  Results tables > R_XXXX
+COM  Variables > v_xxxx
+COM********************************************************************************
+
+
+
+COM********************************************************************************
+COM  Assign parameters
+COM********************************************************************************
+
+
+
+COM********************************************************************************
+COM  User input (Use ACCEPT or DIALOG command below for user to select input values)
+COM********************************************************************************
+
+
+
+COM********************************************************************************
+COM  Do Subscripts. Subscripts should contain script logic.
+COM********************************************************************************
+
+
+   DO ScriptA
+   DO ScriptB
+
+
+COM********************************************************************************
+COM  Cleanup. (Example below)
+COM********************************************************************************
+
+
+   DELETE FORMAT T_Table1 OK
+   DELETE "T_Table1.fil" OK
+
+   SET SAFETY ON
+^OPEN 
