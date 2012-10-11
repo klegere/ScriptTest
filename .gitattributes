@@ -11,6 +11,7 @@
 
 # Custom for ACL
 *.ACL	diff=astextplain
+*.bat	diff=astextplain
 
 # Standard to msysgit
 *.doc	 diff=astextplain
